@@ -1,43 +1,158 @@
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
+@import url('https://fonts.googleapis.com/css2?family=Albert+Sans:wght@300&family=Lato:wght@700&family=Righteous&display=swap');
+
+*,
+*:after,
+*:before {
 	margin: 0;
 	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
+	box-sizing: border-box;
 }
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
+
+:root {
+	--color-pink:  #bb7aa0;
+	--color-cream: #d1926d;
+	--color-magenta: #6f6099;
+	--color-green: #7eb073;
+	--color-brown: #c98042;
+	--color-black: #10100e;
+	--color-white-primary: #ffffff;
+	--color-white-secondary: #e0dee7;
+	--font-logo: 'Righteous', cursive;
+	--font-primary: 'Albert Sans', sans-serif;
+	--font-title: 'Lato', sans-serif;
 }
+
 body {
+	height: 100vh;
+	display: flex;
+}
+
+.left {
+	background-image: url('image.jpg');
+	background-size: cover;
+	width: 40vw;
+	display: grid;
+	place-items: center;
+}
+
+.heading-panel {
+	width: 70%;
+	aspect-ratio: 1;
+	background-color: var(--color-white-secondary);
+	opacity: 0.9;
+	-webkit-backdrop-filter: blur(10px);
+	backdrop-filter: blur(10px);
+	border-radius: 0.4rem;
+	border: 1px solid var(--color-white-primary);
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	padding: 0.5rem;
+}
+
+.logo {
+	width: 4rem;
+	aspect-ratio: 1;
+}
+
+h1 {
+	font-family: var(--font-logo);
+	font-size: 2rem;
 	line-height: 1;
 }
-ol, ul {
-	list-style: none;
+
+div.form {
+	width: 60vw;
+	padding: 6vw;
+	display: grid;
+	height: 100%;
+	grid-template-rows: 1fr 4fr;
 }
-blockquote, q {
-	quotes: none;
+
+p.description {
+	font-family: var(--font-primary);
+	font-size: 1.2rem;
 }
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
+
+form { display: grid;}
+span {
+	position: absolute;
+	font-family: var(--font-title);
+	height: 1rem;
+	font-size: 0.8rem;
 }
-table {
-	border-collapse: collapse;
-	border-spacing: 0;
+fieldset {
+	padding-block-end: 1rem;
+	border: none;
+	display: grid;
+	grid-template-rows: repeat(3, 1fr);
+	grid-template-columns: repeat(2, 1fr);
+}
+
+label, legend, button {
+	font-family: var(--font-title);
+	font-size: 0.9rem;
+}
+
+legend {
+	margin-bottom: 1rem;
+	font-size: 1.2rem; 
+}
+
+label {
+	margin-bottom: 0.4rem;
+	color: var(--color-black);
+	opacity: 0.7;
+    display: block;
+}
+
+input {
+	font-family: var(--font-primary);
+	width: 90%;
+    display: block;
+    padding: 0.4rem;
+    border-radius: 0.3rem;
+    border: 1px solid var(--color-white-secondary);
+    transition: 200ms;
+}
+
+input:hover {
+	outline: 2px solid var(--color-cream);
+}
+
+input:focus {
+	border: 1px solid var(--color-green);
+	outline-offset: 0;
+}
+
+button {
+	border: none;
+	border-radius: 0.3rem;
+	padding: 0.6rem 1rem;
+	margin-inline-end: 1rem;
+	cursor: pointer;
+	transition: 200ms;
+}
+
+button[type="submit"] {
+	background-color: var(--color-pink);
+	color: var(--color-white-primary);
+}
+
+button[type="submit"]:hover { background-color: var(--color-magenta); }
+
+button[type="reset"] {
+	background-color: var(--color-cream);
+	color: var(--color-white-primary);
+}
+
+button[type="reset"]:hover { background-color: var(--color-brown); }
+
+p.login-text {
+	font-family: var(--font-primary);
+}
+a {
+	font-family: var(--font-title);
+	color: var(--color-magenta);
+	text-decoration: none;
 }
